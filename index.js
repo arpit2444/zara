@@ -7,13 +7,14 @@ document.getElementById("left").addEventListener("click",function(){
   console.log(flag)
   slideShow(flag)
  })
- document.getElementById("right").addEventListener("click",function(){
+ let r = document.getElementById("right");
+ r.addEventListener("click",function(){
   if(flag<(slides.length-1)){
    flag=flag+1;
   }
   slideShow(flag)
+})
 
- })
 
 slideShow(flag);
 function slideShow(flag){
@@ -23,3 +24,28 @@ function slideShow(flag){
     slides[flag].style.display="block";
 }
 
+document.getElementById("hamburg").addEventListener("click",function(){
+ 
+  var a = document.createElement('a'); 
+                  
+  a.href= "hamburger.html"
+
+  // document.body.append(a)
+  // var a = document.createElement('a'); 
+                  
+
+  // var link = document.createTextNode("This is link");
+    
+
+  // a.appendChild(link); 
+    
+  
+  // a.title = "This is Link"; 
+    
+  
+  // a.href = "hamburger.html"; 
+  //   console.log(link)
+  
+//  document.body.appendChild(a); 
+
+})
