@@ -1,0 +1,213 @@
+
+.toggler{
+    /* ALWAYS KEEPING THE TOGGLER OR THE CHECKBOX ON TOP OF EVERYTHING :  */
+      z-index:2;
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      opacity: 0;
+    }
+    
+    .hamburger{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 40px;
+      width: 40px;
+      padding: 0.6rem;
+    
+    /* FOR DISPLAYING EVERY ELEMENT IN THE CENTER : */
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* CREATING THE MIDDLE LINE OF THE HAMBURGER : */
+    
+    .hamburger > div{
+      position: relative;
+      top: 0;
+      left: 0;
+      background: black;
+      height: 2px;
+      width: 60%;
+      transition: all  0.4s ease;
+    }
+    
+    /* CREATING THE TOP AND BOTTOM LINES : 
+    TOP AT -10PX ABOVE THE MIDDLE ONE AND BOTTOM ONE IS 10PX BELOW THE MIDDLE: */
+    
+    .hamburger > div::before,
+    .hamburger > div::after{
+      content: '';
+      position: absolute;
+      top: -10px;
+      background: black;
+      width: 100%;
+      height: 2px;
+      transition: all  0.4s ease;
+    }
+    
+    .hamburger > div::after{
+      top: 10px;
+    }
+    
+    /* IF THE TOGGLER IS IN ITS CHECKED STATE, THEN SETTING THE BACKGROUND OF THE MIDDLE LAYER TO COMPLETE BLACK AND OPAQUE :  */
+    
+    .toggler:checked + .hamburger > div{
+      background: rgba(0,0,0,0);
+    }
+    
+    .toggler:checked + .hamburger > div::before{
+      top: 0;
+      transform: rotate(45deg);
+      background: black;
+    }
+    
+    /* AND ROTATING THE TOP AND BOTTOM LINES :  */
+    
+    .toggler:checked + .hamburger > div::after{
+      top: 0;
+      transform: rotate(135deg);
+      background: black;
+    }
+    
+    
+    /* MAIN MENU WITH THE WHITE BACKGROUND AND THE TEXT :  */
+    
+    .menu{
+      background: white;
+      width: 0%;
+      height: 100vh;
+    
+    /* APPLYING TRANSITION TO THE MENU :  */
+    transition: ease-out;
+      /* transition: all 0.4s ease; */
+    }
+    
+    /* IF THE TOGGLER IS CHECKED, THEN INCREASE THE WIDTH OF THE MENU TO 30% , CREATING A SMOOTH EFFECT :  */
+    
+    .toggler:checked ~ .menu{
+      width: 30%;
+    }
+    
+    
+    /* STYLING THE LIST :  */
+    
+    .menu >  div > ul{
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      padding-left: 10px;
+    
+    /* HIDDEN INITIALLY  :  */
+    
+      visibility: hidden;
+    }
+    
+    .menu > div > ul > li{
+      list-style: none;
+      padding: 0.5rem;
+    }
+    
+    .menu > div > ul > li > a{
+      color: black;
+      text-decoration: none;
+      font-size: 2rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* WHEN THE TOGGLER IS CHECKED, CHANGE THE VISIBILITY TO VISIBLE :  */
+    
+    .toggler:checked ~ .menu > div > ul{
+      /* transition: visibility 0.1s ease; */
+      transition: none;
+      transition-delay: 0.1s;
+      visibility: visible;
+    }
+    
+    .toggler:checked ~ .menu > div > ul > li > a:hover{
+      color: orange;
+    }
+    
+    
+    
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+      text-transform: uppercase;
+    }
+    #nav{
+        position: fixed;
+      width: 20%;
+      top: 0;
+      height: auto;
+      padding-top: 12px;
+      background-color: transparent;
+      z-index:1;
+      }
+      #nav2{
+        width: 30%;
+        top: 0;
+        right: 0;
+        position: fixed;
+        display: flex;
+        justify-content: space-around;
+        font-size: 14px;
+      }
+      li{
+        list-style: none;
+      }
+      #one{
+        text-align: center;
+        margin: auto;
+        display: flex;
+        margin-top: 50px;
+        font-size: 12px;
+        flex-direction: row;
+      }
+      
+      #search{
+        margin-right: 80px;
+        margin-left: -50px;
+      }
+      #logo{
+        width: 210px;
+        margin-left: 100px;
+      }
+      #two{
+        font-size: 12px;
+        line-height: 0%;
+      }
+      #imagebox{
+       width: 97%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        justify-content: space-around;
+        margin: auto;
+        margin-top: -465px;
+        position: relative;
+        z-index: -1;
+      }
+   
+      #imagebox>div>img{
+        width:100%;
+        max-width: 740px;
+        height: auto;
+      }
+      .para{
+        margin-top: -10px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+        
+      }
