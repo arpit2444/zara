@@ -1,0 +1,31 @@
+#nav{
+    position: fixed;
+  width: 20%;
+  top: 0;
+  height: auto;
+  padding-top: 12px;
+  background-color: transparent;
+  z-index:1;
+  }
+  #nav2{
+    width: 10%;
+    top: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    
+  }
+  li{
+    list-style: none;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+  #logo{
+    width: 210px;
+    margin-left: 100px;
+  }
